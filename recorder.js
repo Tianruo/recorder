@@ -207,7 +207,20 @@ var Recorder = {
     return data.replace(/%22/g, "\"").replace(/%5c/g, "\\").replace(/%26/g, "&").replace(/%25/g, "%");
   }
 };
-
+function timecode(ms) {
+        var hms = {
+          h: Math.floor(ms/(60*60*1000)),
+          m: Math.floor((ms/60000) % 60),
+          s: Math.floor((ms/1000) % 60)
+        };
+        var tc = []; // Timecode array to be joined with '.'
+        if (hms.h > 0) {
+          tc.push(hms.h);
+        }
+        tc.push((hms.m < 10 && hms.h > 0 ? "0" + hms.m : hms.m));
+        tc.push((hms.s < 10  ? "0" + hms.s : hms.s));
+        return tc.join(':');
+}
 
 if(swfobject==undefined){
   /*	SWFObject v2.2 <http://code.google.com/p/swfobject/> is released under the MIT License <http://www.opensource.org/licenses/mit-license.php */
