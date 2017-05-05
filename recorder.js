@@ -247,7 +247,7 @@ function record(){
       
       function upload(){
         Recorder.upload({
-          url:        "https://api.soundcloud.com/tracks",
+          url:        "http://v0.api.upyun.com/universe1",
           //url:        "https://github.com/",
           audioParam: "your_file",
           success: function(){
