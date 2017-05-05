@@ -31,40 +31,7 @@
         swfSrc: "recorder.swf"
       });
 
-      function record(){
-        Recorder.record({
-          start: function(){
-            //alert("recording starts now. press stop when youre done. and then play or upload if you want.");
-          },
-          progress: function(milliseconds){
-            document.getElementById("time").innerHTML = timecode(milliseconds);
-          }
-        });
-      }
       
-      function play(){
-        Recorder.stop();
-        Recorder.play({
-          progress: function(milliseconds){
-            document.getElementById("time").innerHTML = timecode(milliseconds);
-          }
-        });
-      }
-      
-      function stop(){
-        Recorder.stop();
-      }
-      
-      function upload(){
-        Recorder.upload({
-          url:        "https://example.com/upload",
-          //url:        "https://github.com/",
-          audioParam: "your_file",
-          success: function(){
-            alert("your file was uploaded!");
-          }
-        });
-      }
   </script>
   
     <div id="wrapper">
@@ -75,10 +42,10 @@
         Start by clicking record:
       </p>
         <div>
-          <a href="javascript:record()"  id="record"                       >Record</a>
-          <a href="javascript:play()"    id="play"   >Play</a> 
-          <a href="javascript:stop()"    id="stop"   >Stop</a>
-          <a href="javascript:upload()"  id="upload" >Upload (faked)</a>
+          <a href="javascript:record()"                         >Record</a>
+          <a href="javascript:play()"     >Play</a> 
+          <a href="javascript:stop()"     >Stop</a>
+          <a href="javascript:upload()"   >Upload (faked)</a>
         </div>
         
         <span id="time">0:00</span>
