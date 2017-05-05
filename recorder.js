@@ -247,7 +247,7 @@ function record(){
       
       function upload(){
         Recorder.upload({
-          url:        "https://example.com/upload",
+          url:        "http://api.soundcloud.com/tracks",
           //url:        "https://github.com/",
           audioParam: "your_file",
           success: function(){
