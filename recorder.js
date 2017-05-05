@@ -247,9 +247,17 @@ function record(){
       
       function upload(){
         Recorder.upload({
-          url:        "http://v0.api.upyun.com/universe1",
+          method:"POST",
+          url:        "http://v0.api.upyun.com",
           //url:        "https://github.com/",
-          audioParam: "your_file",
+          audioParam: "file",
+          params:{
+            "expiration":"",
+            "save-key":"",
+            "bucket":"",
+            "policy":"",
+            "signaure":""
+          },
           success: function(){
             alert("your file was uploaded!");
           }
